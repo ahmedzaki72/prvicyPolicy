@@ -1,0 +1,28 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block  body %}
+ 
+  <center>
+   {% if profile.img %}
+       <img src="{{profile.img.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+       {% else %}
+         <h1>image not appeare</h1>
+    {% endif %}
+      <h3 class="media-heading">{{profile.user}} </h3>
+                <span><strong>Skills: </strong></span>
+                  <br/>
+                <span class="label label-warning">HTML5/CSS</span>
+                <br/>
+                <span class="label label-info">Adobe CS 5.5</span>
+                 <br/>
+                <span class="label label-info">Microsoft Office</span>
+                 <br/>
+                <span class="label label-success">{{profile.bio}}</span>
+                 <br/>
+    </center>
+      <div class = 'row'>
+               <a href={% url 'accounts:edit_profile'  profile.slug%} >editProfile</a>
+               <a href={% url 'accounts:change_password'  profile.slug%} >chanePassword</a>
+   </div>
+
+{% endblock  %}

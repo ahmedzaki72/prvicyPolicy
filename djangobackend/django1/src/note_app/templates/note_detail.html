@@ -1,0 +1,11 @@
+{% block context %}
+       <hr>
+          <a href="{% url 'note:edit_Notes' note.slug %}">update Note</a>
+         
+     <br>
+       <hr>
+       <h1>{{note}}</h1>
+       <h4>{{note.content | safe }}</h4>
+       <h4>{{note.created}}</h4>
+       <h4>{{note.tags}}</h4>
+{% endblock  %}>

@@ -1,0 +1,9 @@
+{% block context %}
+     <a href='{% url 'note:add_notes' %}'>add_newNote</a>
+     <br>
+     <hr>
+    {% for note in all_notes %}
+          <a href='{% url 'note:note_detail' note.slug %}'>{{note}}</a>
+            <br>
+    {% endfor %}
+{% endblock  %}
